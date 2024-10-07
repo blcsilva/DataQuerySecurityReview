@@ -10,8 +10,7 @@ def load_credentials_from_file(credentials_file):
 
 def main():
     # Caminho para o arquivo de credenciais JSON
-    credentials_file = "developer-437715-1a50882d7524.json"
-    
+    credentials_file = "google_service_account.json"    
     # Carregar credenciais
     credentials = load_credentials_from_file(credentials_file)
 
