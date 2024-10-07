@@ -1,4 +1,5 @@
 import json
+import os
 from google.cloud import bigquery
 from google.cloud import compute_v1
 from google.oauth2 import service_account
@@ -10,12 +11,13 @@ def load_credentials_from_file(credentials_file):
 
 def main():
     # Caminho para o arquivo de credenciais JSON
-    credentials_file = "google_service_account.json"    
+    credentials_file = "credentials.json"
+    
     # Carregar credenciais
     credentials = load_credentials_from_file(credentials_file)
 
     # Usar as credenciais para criar um cliente BigQuery
-    project_id = 'seu_project_id'
+    project_id = 'seu_project_id'  # Altere para seu ID de projeto
     client = bigquery.Client(credentials=credentials, project=project_id)
     
     # Exemplo: Listar datasets no BigQuery
@@ -29,8 +31,7 @@ def main():
     
     # Exemplo: Listar instâncias de Compute Engine
     zone = 'us-central1-a'  # Substitua pela sua zona
-    project = 'seu_project_id'  # Substitua pelo seu ID de projeto
-    instances = compute_client.list(project=project, zone=zone)
+    instances = compute_client.list(project=project_id, zone=zone)
     print("Instances:")
     for instance in instances:
         print(instance.name)
