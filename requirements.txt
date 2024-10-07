@@ -1,0 +1,4 @@
+google-cloud-bigquery
+google-cloud-compute
+google-cloud-iam
+google-auth

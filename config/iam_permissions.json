@@ -1,0 +1,6 @@
+{
+    "permissions": [
+        "bigquery.datasets.get",
+        "bigquery.tables.get"
+    ]
+}
